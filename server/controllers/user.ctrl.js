@@ -1,8 +1,9 @@
 import { UserModel } from "../models/user.model.js";
-import {NotificationModel} from ''
+import {NotificationModel} from '../models/notification.model.js'
 import { ResponseMessages } from "../utils/responseMessage.js";
 import logger from "../utils/logger.js";
 import { IsValidMongoId } from "../helper/index.js";
+import bcrypt from 'bcryptjs'
 
 export const GetUserProfile = async (req, res) => {
   try {
