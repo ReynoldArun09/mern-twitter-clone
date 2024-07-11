@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import morgan from "morgan";
 import MongoConnection from "./config/MongoConnection.js";
 import logger from "./utils/logger.js";
+import { authRoute } from "./routes/index.js";
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -25,6 +26,9 @@ app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(morgan("dev"));
+
+app.use('/api/v1/auth', authRoute)
+
 
 MongoConnection();
 

@@ -1,0 +1,23 @@
+export const ResponseMessages = {
+	USER_ALREADY_EXIST: "User already exists.",
+	USER_CREATED: "User created successfully.",
+	USER_LOGGEDIN: "User logged in successfully.",
+	USER_NOT_FOUND: "User not found.",
+	INTERNAL_ERROR: "Internal server error. Please try again later.",
+	INVALID_CREDENTIALS: "Invalid username or password.",
+	USER_LOGGEDOUT: "User logged out successfully.",
+	UNAUTHORIZED: "You are not authorized",
+	TokenExpired: "Token expired",
+	INVALID_TOKEN: "Invalid token",
+	INVALID_USER_ID: "Invalid Mongo ID",
+	IMAGE_UPLOAD_FAILED: "Image upload failed",
+	POST_NOT_FOUND: "Post not found",
+	NOT_ALLOWED_TO_DELETE: "You are not authorized to delete the post",
+	POST_DELETED: "Post deleted successfully",
+	NOTIFICATION_DELETE: "All notifications deleted successfully",
+  NOTIFICATION_DELETED: "Notification Deleted",
+  CANNOT_FOLLOW_YOURSELF: "You Cannot follow yourself",
+  FOLLOW_SUCCESS: "User followed successfully",
+  UNFOLLOW_SUCCESS: "User unfollowed successfully",
+	PROVIDE_BOTH_PASSWORD: "Please provide both current password and new password"
+};
