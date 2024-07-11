@@ -1,4 +1,5 @@
 import { UserModel } from "../models/user.model.js";
+import {NotificationModel} from ''
 import { ResponseMessages } from "../utils/responseMessage.js";
 import logger from "../utils/logger.js";
 import { IsValidMongoId } from "../helper/index.js";
@@ -50,7 +51,7 @@ export const FollowAndUnFollowUser = async (req, res) => {
       await UserModel.findByIdAndUpdate(currentUserId, {
         $push: { following: id },
       });
-      const notify = new notifictionModel({
+      const notify = new NotificationModel({
         type: "follow",
         from: currentUserId,
         to: userToModify._id,
@@ -116,17 +117,17 @@ export const UpdateUserProfile = async (req, res) => {
       return res
         .status(400)
         .json({
-          error: "Please provide both current password and new password",
+          message: ResponseMessages.PROVIDE_BOTH_PASSWORD,
         });
     }
     if (currentPassword && newPassword) {
       const isMatch = await bcrypt.compare(currentPassword, user.password);
       if (!isMatch)
-        return res.status(400).json({ error: "Current password is incorrect" });
+        return res.status(400).json({ message: ResponseMessages.INVALID_CREDENTIALS });
       if (newPassword.length < 6) {
         return res
           .status(400)
-          .json({ error: "Password must be at least 6 characters long" });
+          .json({ message: ResponseMessages.PASSWORD_LENGTH });
       }
 
       const saltRounds = 12;

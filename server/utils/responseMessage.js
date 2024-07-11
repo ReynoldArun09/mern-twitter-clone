@@ -19,5 +19,6 @@ export const ResponseMessages = {
   CANNOT_FOLLOW_YOURSELF: "You Cannot follow yourself",
   FOLLOW_SUCCESS: "User followed successfully",
   UNFOLLOW_SUCCESS: "User unfollowed successfully",
-	PROVIDE_BOTH_PASSWORD: "Please provide both current password and new password"
+	PROVIDE_BOTH_PASSWORD: "Please provide both current password and new password",
+	PASSWORD_LENGTH: "Password must be at least 6 characters long"
 };
