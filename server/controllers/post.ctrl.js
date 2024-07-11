@@ -25,9 +25,8 @@ export const CreatePost = async (req, res) => {
         });
         imgUrl = uploadedResponse.secure_url;
       } catch (error) {
-        return res
-          .status(500)
-          .json({ message: ResponseMessages.IMAGE_UPLOAD_FAILED });
+        logger.error(`Error ${error}`)
+        return res.status(500).json({ message: ResponseMessages.IMAGE_UPLOAD_FAILED });
       }
     }
     const newPost = new PostModel({
@@ -163,7 +162,9 @@ export const GetLikedPosts = async (req, res) => {
     if (!existingUser) {
       return res.status(409).json({ message: ResponseMessages.USER_NOT_FOUND });
     }
-    const likedPosts = await PostModel.find({ _id: { $in: user.likedPosts } })
+    const likedPosts = await PostModel.find({
+      _id: { $in: existingUser.likedPosts },
+    })
       .populate("user")
       .populate("comments.user");
     res.status(200).json(likedPosts);
@@ -200,7 +201,7 @@ export const GetUserPosts = async (req, res) => {
     if (!existingUser) {
       return res.status(409).json({ message: ResponseMessages.USER_NOT_FOUND });
     }
-    const userPosts = await PostModel.find({ user: user._id })
+    const userPosts = await PostModel.find({ user: existingUser._id })
       .sort({ createdAt: -1 })
       .populate("user")
       .populate("comments.user");

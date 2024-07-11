@@ -4,6 +4,7 @@ import { ResponseMessages } from "../utils/responseMessage.js";
 import logger from "../utils/logger.js";
 import { IsValidMongoId } from "../helper/index.js";
 import bcrypt from 'bcryptjs'
+import {v2 as cloudinary} from 'cloudinary'
 
 export const GetUserProfile = async (req, res) => {
   try {

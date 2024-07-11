@@ -1,13 +1,10 @@
 import { Router } from "express";
 import * as post from "../controllers/post.ctrl.js";
-import ValidateMiddleware from "../middlewares/ValidateMiddleware.js";
-import { postSchema } from "../utils/schema.js";
 import AuthMiddleware from "../middlewares/AuthMiddleware.js";
 
 export const postRoute = Router();
 postRoute.post(
   "/create-post",
-  ValidateMiddleware(postSchema),
   AuthMiddleware,
   post.CreatePost
 );

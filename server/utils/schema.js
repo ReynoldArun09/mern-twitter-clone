@@ -52,7 +52,7 @@ export const LoginSchema = Joi.object({
 });
 
 
-export const postSchema = Joi.object({
-  text: Joi.string().min(1).max(280),
-  img: Joi.string().uri().optional()
-});
+// export const postSchema = Joi.object({
+//   text: Joi.string().min(1).max(280).optional(),
+//   img: Joi.string().uri().optional()
+// });

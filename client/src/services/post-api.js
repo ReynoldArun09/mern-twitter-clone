@@ -10,7 +10,7 @@ export const CreatePostApi = async ({ text, img }) => {
     body: JSON.stringify({ text, img }),
   });
   const result = await response.json();
-  if (!res.ok) {
+  if (!response.ok) {
     throw new Error(result.message);
   }
   return result;
