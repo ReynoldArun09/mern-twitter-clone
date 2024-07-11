@@ -7,7 +7,7 @@ import morgan from "morgan";
 import { v2 as cloudinary } from "cloudinary";
 import MongoConnection from "./config/MongoConnection.js";
 import logger from "./utils/logger.js";
-import { authRoute, postRoute } from "./routes/index.js";
+import { authRoute, notificationRoute, postRoute } from "./routes/index.js";
 
 const app = express();
 const port = process.env.PORT || 5001;
@@ -35,7 +35,8 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 
 app.use("/api/v1/auth", authRoute);
-app.use("/api/v1/post", postRoute)
+app.use("/api/v1/post", postRoute);
+app.use("/api/v1/notification", notificationRoute)
 
 MongoConnection();
 
