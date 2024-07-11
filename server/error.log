@@ -1,3 +1,0 @@
-2024-07-11T05:22:54.914Z [error]: An error occurred: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-2024-07-11T06:49:23.138Z [error]: Error MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
-2024-07-11T06:49:24.474Z [error]: Error MongoServerSelectionError: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
