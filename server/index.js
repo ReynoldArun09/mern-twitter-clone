@@ -3,7 +3,6 @@ import "dotenv/config";
 import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import morgan from "morgan";
 import { v2 as cloudinary } from "cloudinary";
 import MongoConnection from "./config/MongoConnection.js";
 import logger from "./utils/logger.js";
@@ -32,7 +31,6 @@ app.use(
 app.use(helmet());
 app.use(express.json({limit: '100mb'}));
 app.use(cookieParser());
-app.use(morgan("dev"));
 
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/post", postRoute);
