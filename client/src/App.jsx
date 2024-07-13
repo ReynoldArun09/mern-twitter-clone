@@ -8,8 +8,10 @@ const RegisterPage = lazy(() => import("./pages/Auth/register-page"));
 const LoginPage = lazy(() => import("./pages/Auth/login-page"));
 const Sidebar = lazy(() => import("./components/Sidebar"));
 const RightPanel = lazy(() => import("./components/RightPanel"));
-const NotificationPage = lazy(() => import("./pages/Notification/notification-page"))
-const ProfilePage = lazy(() => import("./pages/Profile/profile-page"))
+const NotificationPage = lazy(() =>
+  import("./pages/Notification/notification-page")
+);
+const ProfilePage = lazy(() => import("./pages/Profile/profile-page"));
 
 export default function App() {
   const { isAuth, isLoading } = useAuth();
@@ -24,7 +26,7 @@ export default function App() {
 
   return (
     <main className="flex max-w-6xl mx-auto">
-      <Suspense fallback={<LoadingSpinner size="lg" />}>
+      <Suspense fallback={<div className="h-screen flex m-auto"><LoadingSpinner size="lg" /></div>}>
         {isAuth && <Sidebar />}
         <Routes>
           <Route
