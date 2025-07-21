@@ -12,7 +12,7 @@ Twitter-Clone is a Twitter-like social media application built using the MERN st
 
 ## 🔗 Links
 - Live: https://x-twitterclone.netlify.app
-- Code: https://github.com/ReynoldArun09/MERN-Twitter-Clone
+- Code: https://github.com/ReynoldArun09/mern-twitter-clone
 
 ## Features
 
